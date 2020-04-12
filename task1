@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<math.h>
+struct info
+{
+  char name[10],sex[1];
+  int age,weight;
+  float height;
+}a[10];
+int main()
+{
+  int i,n;
+  float bmi;
+  printf("Enter no of persons BMI to be calculated\t");
+  scanf("%d",&n);
+  for(i=0;i<n;i++)
+  {
+    printf("Enter %d person name:\t",i+1);
+    scanf("%s",a[i].name);
+    printf("Enter %d person sex M/F:\t",i+1);
+    scanf("%s",a[i].sex);
+    printf("Enter %d person age:\t",i+1);
+    scanf("%d",&a[i].age);
+    printf("Enter %d person weight in kg:\t",i+1);
+    scanf("%d",&a[i].weight);
+    printf("Enter %d person height in m:\t",i+1);
+    scanf("%f",&a[i].height);
+  }
+  for(i=0;i<n;i++)
+  {
+    bmi=a[i].weight/pow(a[i].height,2);
+    printf("%s's\t",a[i].name);
+    printf("BMI:\t%f",bmi);
+  }
+}
